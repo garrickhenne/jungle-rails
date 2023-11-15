@@ -1,2 +1,3 @@
 <h1>Admin::Dashboard#show</h1>
-<p>Find me in app/views/admin/dashboard/show.html.erb</p>
+<%= render 'numeric_summary', title: :products, length: @products.length %>
+<%= render 'numeric_summary', title: :categories, length: @categories.length %>
