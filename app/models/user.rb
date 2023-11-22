@@ -5,8 +5,8 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6 }
 
   def self.authenticate_with_credentials(email, password)
-    @foundUser = User.find_by_email(email.strip.downcase)
+    @found_user = User.find_by_email(email.strip.downcase)
 
-    @foundUser && @foundUser.authenticate(password) ? @foundUser : nil
+    @found_user&.authenticate(password) ? @found_user : nil
   end
 end
