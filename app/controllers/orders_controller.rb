@@ -1,5 +1,4 @@
 class OrdersController < ApplicationController
-
   def show
     @order = Order.find(params[:id])
     puts @order.inspect
@@ -15,7 +14,6 @@ class OrdersController < ApplicationController
     else
       redirect_to cart_path, flash: { error: order.errors.full_messages.first }
     end
-
   rescue Stripe::CardError => e
     redirect_to cart_path, flash: { error: e.message }
   end
@@ -29,10 +27,10 @@ class OrdersController < ApplicationController
 
   def perform_stripe_charge
     Stripe::Charge.create(
-      source:      params[:stripeToken],
-      amount:      cart_subtotal_cents,
+      source: params[:stripeToken],
+      amount: cart_subtotal_cents,
       description: "Khurram Virani's Jungle Order",
-      currency:    'cad'
+      currency: 'cad'
     )
   end
 
@@ -56,5 +54,4 @@ class OrdersController < ApplicationController
     order.save!
     order
   end
-
 end
