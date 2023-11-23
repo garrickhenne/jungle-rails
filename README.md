@@ -2,6 +2,12 @@
 
 A mini e-commerce application built with Rails 6.1 for purposes of teaching Rails by example.
 
+## Features
+
+- Hosted database for user register/sign up with email + salted password using bcrypt
+- Test features to allow payments for orders with Stripe
+- Administrator dashboard (with authentication credentials) to allow ability to add new categories and products
+
 ## Setup
 
 1. Run `bundle install` to install dependencies
@@ -29,3 +35,13 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 - Bootstrap 5
 - PostgreSQL 9.x
 - Stripe
+
+## Screenshots
+
+Homepage
+![homepage](./images/homepage.png)
+Product page
+![product page](./images/product.png)
+Cart and stripe order component
+![cart](./images/cart.png)
+![cart-stripe](./images/cart-stripe.png)
